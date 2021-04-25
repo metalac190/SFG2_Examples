@@ -7,7 +7,7 @@ using UnityEngine;
 /// of the boilerplate detection, and then expose the method that subclasses
 /// should call to change the effect of 'player collision'
 /// </summary>
-namespace Examples.TemplateMethod
+namespace TemplateMethod
 {
     [RequireComponent(typeof(Collider))]
     [RequireComponent(typeof(AudioSource))]
@@ -43,19 +43,13 @@ namespace Examples.TemplateMethod
             Player player = other.GetComponent<Player>();
             if (player == null)
                 return;
-
-            // found the player! call our abstract method and supporting feedback
+            // found the player! call our abstract method
             OnPickup(player);
-
+            // supporting SFX/VFX
             if (_pickupSFX != null)
-            {
                 SpawnAudio(_pickupSFX);
-            }  
-
             if (_particlePrefab != null)
-            {
                 SpawnParticle(_particlePrefab);
-            }
 
             Disable();
         }
@@ -68,7 +62,8 @@ namespace Examples.TemplateMethod
         void SpawnParticle(ParticleSystem pickupParticles)
         {
             ParticleSystem newParticles =
-                Instantiate(pickupParticles, transform.position, Quaternion.identity);
+                Instantiate(pickupParticles, 
+                transform.position, Quaternion.identity);
             newParticles.Play();
         }
 

@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Examples.TemplateMethod
+namespace Inheritance
 {
-	public class CameraFollow : MonoBehaviour
-	{
+    public class CameraFollow : MonoBehaviour
+    {
 		[SerializeField] GameObject _player;
 		Vector3 _offset;
 

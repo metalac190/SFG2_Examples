@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Examples.TemplateMethod
+namespace TemplateMethod
 {
     public class BallMotor : MonoBehaviour
     {

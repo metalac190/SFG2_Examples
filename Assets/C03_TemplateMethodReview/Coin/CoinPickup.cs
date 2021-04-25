@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Utilize Template Method to hook into OnPickup - easy extension and variability!
 /// </summary>
-namespace Examples.TemplateMethod
+namespace TemplateMethod
 {
     public class CoinPickup : Pickup
     {
@@ -13,7 +13,12 @@ namespace Examples.TemplateMethod
 
         protected override void OnPickup(Player player)
         {
-            player.AddCoin(_coinValue);
+            Inventory inventory = 
+                player.gameObject.GetComponent<Inventory>();
+            if(inventory != null)
+            {
+                inventory.AddCoin(_coinValue);
+            }
         }
     }
 }

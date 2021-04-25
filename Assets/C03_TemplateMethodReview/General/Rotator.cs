@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Examples.TemplateMethod
+namespace TemplateMethod
 {
     public class Rotator : MonoBehaviour
     {

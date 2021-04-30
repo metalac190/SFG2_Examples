@@ -14,6 +14,7 @@ namespace Observer
         private void Awake()
         {
             Debug.Log("New " + _name + " has appeared!");
+            Debug.Log(_name + " attacked for " + _damage + " damage.");
         }
     }
 }
